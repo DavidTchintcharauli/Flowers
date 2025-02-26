@@ -1,8 +1,8 @@
 import { getUserRoleServer } from "./server/user/user.action";
-import { EnvVarWarning } from "@/components/env-var-warning";
-import HeaderAuth from "@/components/header-auth";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
+import { EnvVarWarning } from "./components/env-var-warning";
+import HeaderAuth from "./components/header-auth";
+import { ThemeSwitcher } from "./components/theme-switcher";
+import { hasEnvVars } from "./utils/supabase/check-env-vars";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
@@ -45,6 +45,11 @@ export default async function RootLayout({
                 <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
                   <div className="flex gap-5 items-center font-semibold">
                     <Link href={"/"}>🌺 Flower Shop</Link> <div>🚀 შენი როლი: {role}</div>
+                    <Link href="/products">
+                      <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                        🛍️ პროდუქტები
+                      </button>
+                    </Link>
                   </div>
                   {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
                 </div>
