@@ -6,7 +6,6 @@ export default async function ProductsPage() {
 
   return (
     <div className="max-w-6xl mx-auto mt-10 p-6">
-      <h1 className="text-3xl font-bold mb-6 text-center">🛍️ ჩვენი პროდუქტები</h1>
       {products.length === 0 ? (
         <p className="text-gray-500 text-center">🚀 პროდუქტები ჯერ არ არის დამატებული.</p>
       ) : (
